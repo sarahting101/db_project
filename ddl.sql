@@ -15,23 +15,23 @@ picture how?
 
 訂單：	ID、扭蛋.ID、玩家.帳號、已寄送
 
-
-
 create table announcement
 (
-	content   varchar(1000) not null,
-
+	ID varchar(8),
+	enterprise_ID varchar(8),
+	machine_ID varchar(8),
+	content varchar(1000) not null,
+	primary key(ID),
 	foreign key (enterprise_ID) references enterprise (ID) 
-		on delete set null,
-
+		on delete cascade,
+	# 如果商家或扭蛋機被刪掉，他們的公告也會刪除
 	foreign key (machine_ID) references machine (ID) 
-		on delete set null
-
+		on delete cascade
 )ENGINE=INNODB;
 
 create table comment
 (
-	content   varchar(1000),
+	content varchar(1000),
 
 	foreign key (player_ID) references player (ID) 
 		on delete set null,
