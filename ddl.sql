@@ -70,6 +70,7 @@ create table machine
 	picture VARCHAR(50),
 	amount     decimal(12,0) check (amount>0),
 	enterprise_ID VARCHAR(8),
+	primary key (ID),
 	# 如果商家被刪掉，扭蛋機也會刪除
 	foreign key (enterprise_ID) references enterprise (ID) 
 		on delete cascade
@@ -84,6 +85,7 @@ create table gashapon
 	# 扭蛋數量應該可以=0，表示扭完了
 	amount     decimal(12,0) not null,
 	machine_ID VARCHAR(8),
+	primary key (ID),
 	foreign key (machine_ID) references machine (ID) 
 		on delete set null
 )ENGINE=INNODB;
