@@ -9,7 +9,7 @@ where `player_id` = '玩家輸入的ID' and `password` = '玩家輸入的passwor
 
 /* 查看個人帳戶資料 */
 	/*帳號、密碼、寄送地址、帳戶、帳戶金幣餘額*/
-	select `palyer_id`, `password`, `address`, `account`, `money`
+	select `player_id`, `password`, `address`, `account`, `money`
 	from `player`
 	where `player_id` = '玩家ID';
 	/*未寄送(send = 0)的訂單編號、扭蛋*/
@@ -97,8 +97,3 @@ where `player_id` = '玩家輸入的ID' and `password` = '玩家輸入的passwor
 /* 反饋問題給該扭蛋機商家 */
 INSERT INTO `asks` (`player_id`, `machine_id`, `content`) VALUES
 ('玩家ID', '扭蛋機ID', '反饋內容');
-
-
-
-
-

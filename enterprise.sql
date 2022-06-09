@@ -19,11 +19,15 @@ FROM machine
 WHERE machine_id= 查看的扭蛋機id;
 
 	//查看扭蛋機剩餘獎品數量
+/*	gashpon 分類、全部 */
+		
 	SELECT amount
 	FROM machine
 	WHERE machine_id= 查看的扭蛋機id;
-
 	//查看和設定剩餘獎品種類
+/* 好像沒有設定獎品種類(? */
+/* 用natural join會join到name, amount...其他東西 
+可以用 A join B using(xx_id) */
 	SELECT name, picture, amount
 	FROM gashpon NATURAL JOIN machine
 	WHERE machine_id= 查看的扭蛋機id;
@@ -84,7 +88,7 @@ GROUP BY gashapon.name;
 //未寄送->已寄送
 UPDATE orderform
 SET send = 2
-WHERE orderform_id=
+WHERE orderform_id=訂單id
 
 //確認玩家寄件地址
 SELECT player_id, address
