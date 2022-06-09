@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `gashapon`
 CREATE TABLE IF NOT EXISTS `orderform`
 (
 	`orderform_id`    int         NOT NULL AUTO_INCREMENT,
-	`send`            bool,
+	`send`             decimal(5,0),
 	`gashapon_id`     int,
 	`player_id`       int,
 	primary key (`orderform_id`),
@@ -155,10 +155,10 @@ INSERT INTO `gashapon` (`gashapon_id`, `name`, `picture`, `amount`, `machine_id`
 	(40009, 'tennis', 'https://i.imgur.com/CNSpmqF.png', 5, 30003);
 	
 INSERT INTO `orderform` (`orderform_id`, `send`, `gashapon_id`, `player_id`) VALUES
-/* 0: 未寄出, 1:已寄出 */
+/* 0: 未寄出 1:申請寄送 2:已寄出 */
 	(50001, 0, 40001, 20001),
-	(50002, 0, 40004, 20002),
-	(50003, 1, 40008, 20003);
+	(50002, 1, 40004, 20002),
+	(50003, 2, 40008, 20003);
 
 
 
