@@ -104,3 +104,12 @@ where `player_id` = '玩家輸入的ID' and `password` = '玩家輸入的passwor
 /* 反饋問題給該扭蛋機商家 */
 INSERT INTO `asks` (`player_id`, `machine_id`, `content`) VALUES
 ('玩家ID', '扭蛋機ID', '反饋內容');
+/* 玩家查看對該扭蛋機的反饋問題 */
+select `content`
+from `asks`
+where `player_id` = '玩家ID' and `machine_id` = '要查看的扭蛋機ID'
+/* 玩家查看對所有扭蛋機的反饋問題 */
+select `machine_id`, `content`
+from `asks`
+where `player_id` = '玩家ID'
+order by `machine_id`;
