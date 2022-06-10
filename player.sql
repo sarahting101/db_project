@@ -15,15 +15,20 @@ where `player_id` = '玩家輸入的ID' and `password` = '玩家輸入的passwor
 	/*未寄送(send = 0)的訂單編號、扭蛋*/
 	select `orderform_id`, `gashapon_id`
 	from `player` join `orderform` using(player_id)
-	where `player_id` = '玩家ID' and send = 0;
+	where `player_id` = '玩家ID' and send = 0
+	order by `orderform_id` desc;
 	/*申請寄送(send = 1)的訂單編號、扭蛋*/
 	select `orderform_id`, `gashapon_id`
 	from `player` join `orderform` using(player_id)
-	where `player_id` = '玩家ID' and send = 1;
+	where `player_id` = '玩家ID' and send = 1
+	order by `orderform_id` desc;
+
 	/*歷史訂單: 已寄送(send = 2)的訂單編號、扭蛋*/
 	select `orderform_id`, `gashapon_id`
 	from `player` join `orderform` using(player_id)
-	where `player_id` = '玩家ID' and send = 2;
+	where `player_id` = '玩家ID' and send = 2
+	order by `orderform_id` desc;
+		
 
 	/*各種update*/
 		/* 更改密碼 */
@@ -45,7 +50,9 @@ where `player_id` = '玩家輸入的ID' and `password` = '玩家輸入的passwor
 	select `machine`.`name`, `price`, `machine`.`picture`, `machine`.`amount`, sum(`gashapon`.`amount`)
 	from `machine` join `gashapon` using(machine_id)
 	group by `machine_id`
-	having sum(`gashapon`.`amount`)>0;/* 扭蛋個數要大於0才會列出 */
+	having sum(`gashapon`.`amount`)>0/* 扭蛋個數要大於0才會列出 */
+	order by `price` desc;
+		
 
 	/*需要先存玩家扭蛋前的金幣餘額*/
 	select `money`
