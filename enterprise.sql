@@ -24,8 +24,8 @@ WHERE machine_id= 查看的扭蛋機id;
 	WHERE machine_id= 查看的扭蛋機id;
 
 	//查看剩餘"扭蛋"
-	SELECT name, picture, amount
-	FROM gashpon NATURAL JOIN machine
+	SELECT gashapon.name, gashapon.picture, gashapon.amount
+	FROM gashpon JOIN machine using machine_id
 	WHERE machine_id= 查看的扭蛋機id;
 
 	//新增舊扭蛋
@@ -37,13 +37,27 @@ WHERE machine_id= 查看的扭蛋機id;
 	INSERT INTO `gashapon` (`name`, `picture`, `amount`, `machine_ID`) 
 		VALUES('名字', '圖片', 數量 , '扭蛋機id');
 
-		/*CREATE TRIGGER gashpon_amount_change AFTER INSERT ON gashpon
-		REFERENCING NEW ROW AS nrow
+		/*
+		CREATE TRIGGER gashapon_amount_change 
+		AFTER INSERT ON gashapon
+		as
+		BEGIN 
+			select*
+			from gashapon
+		END;
+
+		CREATE TRIGGER gashapon_amount_change 
+		AFTER INSERT ON gashapon
 		FOR EACH ROW
+		BEGIN ATOMIC
 			UPDATE machine 
-			SET amount++;
+			SET amount+1
 			WHERE machine.machine_ID=nrow.machine_ID
-		END;*/
+		END;
+
+
+
+		*/
 
 //查看玩家的問題反饋
 	//單一扭蛋機問題反饋
