@@ -109,7 +109,7 @@ delete from `enterprise`;
 delete from `machine`;
 delete from `announces`;
 delete from `player`;
-delete from `asks`;
+/* delete from `asks`; */
 delete from `gashapon`;
 delete from `orderform`;
 
