@@ -17,16 +17,17 @@ where `player_id` = '玩家輸入的ID' and `password` = '玩家輸入的passwor
 	from `player` join `orderform` using(player_id)
 	where `player_id` = '玩家ID' and send = 0
 	order by `orderform_id` desc;
+/*
 	/*申請寄送(send = 1)的訂單編號、扭蛋*/
 	select `orderform_id`, `gashapon_id`
 	from `player` join `orderform` using(player_id)
 	where `player_id` = '玩家ID' and send = 1
 	order by `orderform_id` desc;
-
+*/
 	/*歷史訂單: 已寄送(send = 2)的訂單編號、扭蛋*/
 	select `orderform_id`, `gashapon_id`
 	from `player` join `orderform` using(player_id)
-	where `player_id` = '玩家ID' and send = 2
+	where `player_id` = '玩家ID' and send = 1
 	order by `orderform_id` desc;
 		
 
@@ -100,7 +101,7 @@ where `player_id` = '玩家輸入的ID' and `password` = '玩家輸入的passwor
 		set `send` = 1
 		where `orderform_id` = '寄出的訂單ID';
 
-	
+/*
 /* 反饋問題給該扭蛋機商家 */
 INSERT INTO `asks` (`player_id`, `machine_id`, `content`) VALUES
 ('玩家ID', '扭蛋機ID', '反饋內容');
@@ -113,3 +114,4 @@ select `machine_id`, `content`
 from `asks`
 where `player_id` = '玩家ID'
 order by `machine_id`;
+*/
