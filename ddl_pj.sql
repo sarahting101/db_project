@@ -151,12 +151,12 @@ INSERT INTO `gashapon` (`gashapon_id`, `name`, `picture`, `amount`, `machine_id`
 	(40006, '老虎', 'https://i.imgur.com/ovyKwXK.png', 5, 30001),
 	(40007, '西瓜鳥', 'https://i.imgur.com/52ibBTy.png', 5, 30002),
 	(40008, '檸檬鳥', 'https://i.imgur.com/fJFPX64.png', 4, 30002),
-	(40009, '無花果鳥', 'https://i.imgur.com/0liV1XH.png', 5, 30002);
-	(40009, '芒果鳥', 'https://i.imgur.com/FMZY3hJ.png', 5, 30002);
-	(40009, '藍莓鳥', 'https://i.imgur.com/cppwwUH.png', 5, 30002);
-	(40009, '日向', 'https://i.imgur.com/DgycVXk.png', 5, 30003);
-	(40009, '影山', 'https://i.imgur.com/qvqwsW3.png', 5, 30003);
-	(40009, '黑尾', 'https://i.imgur.com/2WHVMFP.png', 5, 30003);
+	(40009, '無花果鳥', 'https://i.imgur.com/0liV1XH.png', 5, 30002),
+	(40009, '芒果鳥', 'https://i.imgur.com/FMZY3hJ.png', 5, 30002),
+	(40009, '藍莓鳥', 'https://i.imgur.com/cppwwUH.png', 5, 30002),
+	(40009, '日向', 'https://i.imgur.com/DgycVXk.png', 5, 30003),
+	(40009, '影山', 'https://i.imgur.com/qvqwsW3.png', 5, 30003),
+	(40009, '黑尾', 'https://i.imgur.com/2WHVMFP.png', 5, 30003),
 	(40009, '研磨', 'https://i.imgur.com/pD3RVEc.png', 5, 30003);
 
 	
