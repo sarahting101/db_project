@@ -25,10 +25,7 @@
 			<th>扭蛋機圖片連結</th>
 			<td bgcolor="#FFFFFF"><input type="text" name="picture" /></td>
 		</tr>
-		<tr>
-			<th>扭蛋種類個數(請填數字)</th>
-			<td bgcolor="#FFFFFF"><input type="number" name="amount" /></td>
-		</tr>
+		
 	</table>
     <form action="ehome.php"><input type="submit" value="返回"></form>
 </body>
